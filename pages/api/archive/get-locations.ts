@@ -2,37 +2,36 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  locations: any,
+  locations: any
 }
 
 const GS_KEY = process.env.GS_KEY
+const GS_ID = process.env.GS_ID
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  
-  let { pointsOfInterest, city } = JSON.parse(req.body)
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  let { pointsOfInterest, place } = JSON.parse(req.body)
   pointsOfInterest = JSON.parse(pointsOfInterest)
 
   const locations: {}[] = []
-  await Promise.all(pointsOfInterest.map(async point => {
-    try {
-      const GSURL = `https://www.googleapis.com/customsearch/v1?key=${GS_KEY}&cx=6573f103116714e0d&q=${point + ' in ' + city}`
+  await Promise.all(
+    pointsOfInterest.map(async (point) => {
+      try {
+        const GSURL = `https://www.googleapis.com/customsearch/v1?key=${GS_KEY}&cx=${GS_ID}&q=${point + ' in ' + place}`
 
-      const response = await fetch(GSURL)
-      const location = await response.json()
-      console.log('location: ', location)
+        const response = await fetch(GSURL)
+        const location = await response.json()
+        console.log('location: ', location)
 
-      if (location) {
-        locations.push(location.items[0])
+        if (location) {
+          locations.push(location.items[0])
+        }
+      } catch (err) {
+        console.log('error: ', err)
       }
-    } catch (err) {
-      console.log('error: ', err)
-    }
-  }))
+    })
+  )
 
   res.status(200).json({
-    locations,
+    locations
   })
 }

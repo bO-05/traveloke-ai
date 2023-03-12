@@ -1,5 +1,5 @@
 {
-  "name": "next-gpt3",
+  "name": "traveloke-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,9 @@
     "react-markdown": "^8.0.5",
     "remark-gfm": "^3.0.1",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1"
   }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap');
 
 :root {
@@ -18,22 +18,11 @@
     #0071ff33 160deg,
     transparent 360deg
   );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+  --tile-border: conic-gradient(#00000080, #00000040, #00000030, #00000020, #00000010, #00000010, #00000080);
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
@@ -42,16 +31,14 @@
 }
 
 li {
-  color: white
+  color: white;
 }
-
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Roboto Mono", Helvetica, sans-serif;
-
+  font-family: 'Roboto Mono', Helvetica, sans-serif;
 }
 
 p {
@@ -80,7 +67,7 @@ body {
   margin-bottom: -50px;
 }
 
-.footer{
+.footer {
   height: 50px;
   display: flex;
   justify-content: center;
@@ -110,7 +97,8 @@ a p {
   color: #00fffe;
 }
 
-.footer a,.hero-subheader a {
+.footer a,
+.hero-subheader a {
   color: #fff;
 }
 
@@ -128,7 +116,7 @@ input {
   color: #fff;
   /*font-weight: bold;*/
   border-radius: 50px;
-  transition: all .35s;
+  transition: all 0.35s;
   font-size: 18px;
   text-shadow: 0 0 4px #5a5a5a;
 }
@@ -145,14 +133,14 @@ input {
 .results-container {
   width: 800px;
   padding-top: 55px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 .results-container a {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-position: under;
   font-weight: 500;
-  color:#1783ff;
+  color: #1783ff;
 }
 
 .input-button:hover {
@@ -160,7 +148,7 @@ input {
 }
 
 .hero-subheader {
-  position:absolute;
+  position: absolute;
 }
 
 @media screen and (max-width: 500px) {
@@ -186,7 +174,7 @@ input {
 
 @media screen and (max-width: 450px) {
   h1 {
-    margin-top:0 !important;
+    margin-top: 0 !important;
     font-size: 55px !important;
     line-height: 60px !important;
   }
